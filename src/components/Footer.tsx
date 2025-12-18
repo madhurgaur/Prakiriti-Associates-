@@ -47,7 +47,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-3 text-white">Contact</h3>
           <ul className="text-sm text-gray-400 space-y-2 mb-4">
-            <li>Email: <a href="mailto:info@mayanktripathi@gmail.com" className="hover:text-primary">trueinfralabs@gmail.com</a></li>
+            <li>Email: <a href="mailto:info@trueinfralabs@gmail.com" className="hover:text-primary">trueinfralabs@gmail.com</a></li>
             <li>Phone: <a href="tel:+911234567890" className="hover:text-primary">+91 7275342889</a></li>
             <li>Location: Gorakhpur, India</li>
           </ul>

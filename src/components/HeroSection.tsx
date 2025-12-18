@@ -26,7 +26,7 @@ const HeroSection = () => {
     },
     {
       image: "/assets/Software%20Development.jpg",
-      name: "Software Development"
+      name: "Website Development"
     }
   ];
 

@@ -152,7 +152,7 @@ export default function Contactus() {
                         href="mailto:info@prakriti-associate.com" 
                         className="text-muted-foreground hover:text-primary transition"
                       >
-                        mayanktripathi@gmail.com
+                        trueinfralabs@gmail.com
                       </a>
                     </div>
                   </CardContent>
@@ -206,14 +206,14 @@ export default function Contactus() {
                       <span className="text-muted-foreground">Monday - Friday:</span>
                       <span className="font-semibold text-foreground">9:00 AM - 6:00 PM</span>
                     </div>
-                    <div className="flex justify-between items-center">
+                    {/* <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Saturday:</span>
                       <span className="font-semibold text-foreground">10:00 AM - 4:00 PM</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-muted-foreground">Sunday:</span>
                       <span className="font-semibold text-foreground">Closed</span>
-                    </div>
+                    </div> */}
                   </div>
                 </CardContent>
               </Card>
