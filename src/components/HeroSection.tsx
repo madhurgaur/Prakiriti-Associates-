@@ -12,19 +12,19 @@ const HeroSection = () => {
 
   const services = [
     {
-      image: "/public/assets/appdevlopment.jpg",
+      image: "/assets/appdevlopment.jpg",
       name: "App Development"
     },
     {
-      image: "/public/assets/Software Development.jpg",
+      image: "/assets/Software%20Development.jpg",
       name: "Software Development"
     },
     {
-      image: "/public/assets/Datacenter.jpg",
+      image: "/assets/Datacenter.jpg",
       name: "Server Managment"
     },
     {
-      image: "/public/assets/CloudComputing.jpg",
+      image: "/assets/CloudComputing.jpg",
       name: "Cloud Computing"
     }
   ];
