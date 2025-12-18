@@ -30,18 +30,7 @@ import { Link } from "react-router-dom";
 
 const Expertise = () => {
   const expertiseAreas = [
-    {
-      icon: Code,
-      title: "Web & App Development",
-      description: "Enterprise-grade applications built with modern frameworks and industry best practices.",
-      technologies: ["React", "Next.js", "Node.js", "TypeScript", "Flutter", "React Native"],
-      outcomes: [
-        "Reduced time-to-market by 40%",
-        "Scalable architecture for growth",
-        "Cross-platform compatibility"
-      ],
-      gradient: "from-blue-600 to-cyan-600"
-    },
+    
     {
       icon: Cloud,
       title: "Cloud Engineering",
@@ -65,6 +54,18 @@ const Expertise = () => {
         "Zero-downtime deployments"
       ],
       gradient: "from-orange-600 to-red-600"
+    },
+    {
+      icon: Code,
+      title: "Web & App Development",
+      description: "Enterprise-grade applications built with modern frameworks and industry best practices.",
+      technologies: ["React", "Next.js", "Node.js", "TypeScript", "Flutter", "React Native"],
+      outcomes: [
+        "Reduced time-to-market by 40%",
+        "Scalable architecture for growth",
+        "Cross-platform compatibility"
+      ],
+      gradient: "from-blue-600 to-cyan-600"
     },
     {
       icon: Shield,

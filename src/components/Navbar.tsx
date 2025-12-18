@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 
 interface SubMenuItem {
@@ -21,6 +21,32 @@ const Navbar = () => {
   const [mobileActiveMenu, setMobileActiveMenu] = useState<string | null>(null);
   const [mobileActiveSubmenu, setMobileActiveSubmenu] = useState<string | null>(null);
   const [mobileActiveSubSubmenu, setMobileActiveSubSubmenu] = useState<string | null>(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   const menuItems: MenuItem[] = [
     { label: "Home", href: "/" },
@@ -193,18 +219,22 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-nav shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 bg-nav shadow-sm transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
       onMouseLeave={handleMenuLeave}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-2">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg hero-gradient flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">P</span>
+            <a href="/" className="flex items-center gap-1">
+              <div className="w-15 h-15 rounded-lg flex items-center justify-center">
+                {/* <span className="text-primary-foreground font-bold text-xl">P</span>
+                 */}
+                 <img src="../../public/tlogo.png" className="h-15 w-20"/>
               </div>
-              <span className="text-xl font-bold text-primary tracking-tight">
+              <span className="text-xl font-bold text-primary tracking-tight ">
                 True Infra<span className="text-accent"></span>Labs
               </span>
             </a>

@@ -11,6 +11,15 @@ const HeroSection = () => {
   ];
 
   const services = [
+   
+    {
+      image: "/assets/CloudComputing.jpg",
+      name: "Cloud Computing"
+    },
+    {
+      image: "/assets/Datacenter.jpg",
+      name: "Server Managment"
+    },
     {
       image: "/assets/appdevlopment.jpg",
       name: "App Development"
@@ -18,14 +27,6 @@ const HeroSection = () => {
     {
       image: "/assets/Software%20Development.jpg",
       name: "Software Development"
-    },
-    {
-      image: "/assets/Datacenter.jpg",
-      name: "Server Managment"
-    },
-    {
-      image: "/assets/CloudComputing.jpg",
-      name: "Cloud Computing"
     }
   ];
 
@@ -92,13 +93,7 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4 animate-slide-up"
               style={{ animationDelay: "0.4s" }}
             >
-              <Link
-                to="/contact"
-                className="group px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2"
-              >
-                Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              
               <button
                 onClick={() => {
                   const expertiseSection = document.querySelector('#expertise-section');
@@ -108,10 +103,18 @@ const HeroSection = () => {
               >
                 View Expertise
               </button>
+
+              <Link
+                to="/contact"
+                className="group px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2"
+              >
+                Get Started
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
 
             {/* Feature Pills */}
-            <div 
+            {/* <div 
               className="flex flex-wrap gap-3 pt-4 animate-slide-up"
               style={{ animationDelay: "0.5s" }}
             >
@@ -126,7 +129,7 @@ const HeroSection = () => {
                   </span>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - Stats Card */}
