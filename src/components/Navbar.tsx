@@ -230,9 +230,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center gap-1">
               <div className="w-15 h-15 rounded-lg flex items-center justify-center">
-                {/* <span className="text-primary-foreground font-bold text-xl">P</span>
-                 */}
-                 <img src="../../public/tlogo.png" className="h-15 w-20"/>
+                 <img src="/tlogo.png" alt="True Infra Labs" className="h-15 w-20"/>
               </div>
               <span className="text-xl font-bold text-primary tracking-tight ">
                 True Infra<span className="text-accent"></span>Labs
