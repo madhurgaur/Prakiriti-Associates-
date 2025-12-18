@@ -244,7 +244,7 @@ const Expertise = () => {
               Trusted by 100+ Enterprise Clients
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-              True InfraLabs <h1 className="text-primary pt-4">"Where System Connects"</h1>
+              True InfraLabs <span className=" block text-primary pt-4">"Where System Connects"</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               We deliver enterprise-grade technology solutions backed by proven methodologies, 
