@@ -1,4 +1,4 @@
-# Prakriti Nav Explorer
+# True InfraLabsExplorer
 
 A modern navigation UI built with React, TypeScript, and Tailwind CSS.
 

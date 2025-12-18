@@ -7,7 +7,7 @@ export default function Footer() {
         {/* About Us */}
         <div>
           <h3 className="text-lg font-semibold mb-3 text-white">About Us</h3>
-          <p className="text-sm text-gray-400">Prakriti Associate is a leading consultancy providing IT solutions, cloud services, and automation for modern businesses. We deliver reliable, scalable, and innovative technology support.</p>
+          <p className="text-sm text-gray-400">True InfraLabs is a leading consultancy providing IT solutions, cloud services, and automation for modern businesses. We deliver reliable, scalable, and innovative technology support.</p>
         </div>
 
         {/* Quick Links */}
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Prakriti Associate. All rights reserved.
+        &copy; {new Date().getFullYear()} True InfraLabs. All rights reserved.
       </div>
     </footer>
   );

@@ -63,7 +63,7 @@ export default function Contactus() {
         phone: data.phone,
         subject: data.subject,
         message: data.message,
-        from_name: "Prakriti Associate Contact Form",
+        from_name: "True InfraLabs Associate Contact Form",
       };
 
       // Send POST request to Web3Forms API
