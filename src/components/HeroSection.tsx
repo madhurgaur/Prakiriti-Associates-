@@ -1,4 +1,6 @@
-import { ArrowRight, Server, Cloud, Shield, Zap } from "lucide-react";
+import { ArrowRight, Server, Cloud, Shield, Zap, Code, Cog, Globe, Smartphone, GitBranch, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const HeroSection = () => {
   const features = [
@@ -8,8 +10,37 @@ const HeroSection = () => {
     { icon: Zap, label: "Fast Automation" },
   ];
 
+  const services = [
+    {
+      image: "/assets/appdevlopment.jpg",
+      name: "App Development"
+    },
+    {
+      image: "/assets/Software Development.jpg",
+      name: "Software Development"
+    },
+    {
+      image: "/assets/Datacenter.jpg",
+      name: "Server Managment"
+    },
+    {
+      image: "/assets/CloudComputing.jpg",
+      name: "Cloud Computing"
+    }
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % services.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
+  };
+
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden">
+    <section className="relative min-h-screen pt-5 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 hero-gradient opacity-5" />
       <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl" />
@@ -52,7 +83,7 @@ const HeroSection = () => {
               className="text-lg text-muted-foreground max-w-xl animate-slide-up"
               style={{ animationDelay: "0.3s" }}
             >
-              Prakriti Associate delivers comprehensive IT services including server management, 
+              True Infra Labs delivers comprehensive IT services including server management, 
               cloud automation, and custom development solutions. We help businesses scale 
               efficiently and securely.
             </p>
@@ -61,12 +92,21 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4 animate-slide-up"
               style={{ animationDelay: "0.4s" }}
             >
-              <button className="group px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2">
+              <Link
+                to="/contact"
+                className="group px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 flex items-center gap-2"
+              >
                 Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-4 bg-card text-foreground font-semibold rounded-xl border border-border hover:border-accent hover:text-accent transition-all duration-300">
-                View Services
+              </Link>
+              <button
+                onClick={() => {
+                  const expertiseSection = document.querySelector('#expertise-section');
+                  expertiseSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className="px-8 py-4 bg-card text-foreground font-semibold rounded-xl border border-border hover:border-accent hover:text-accent transition-all duration-300"
+              >
+                View Expertise
               </button>
             </div>
 
@@ -99,51 +139,85 @@ const HeroSection = () => {
               <div className="absolute -top-4 -right-4 w-24 h-24 hero-gradient rounded-2xl opacity-20 blur-xl" />
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent rounded-2xl opacity-10 blur-xl" />
 
-              <div className="relative space-y-8">
-                <div className="flex items-center gap-4">
+              <div className="relative space-y-6">
+                {/* <div className="flex items-center gap-4">
                   <div className="w-16 h-16 hero-gradient rounded-2xl flex items-center justify-center shadow-lg">
                     <Server className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground">Enterprise Ready</h3>
-                    <p className="text-muted-foreground">Scalable solutions</p>
+                    <h3 className="text-2xl font-bold text-foreground">What we Offer</h3>
+                    <p className="text-muted-foreground">Expert solutions</p>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-2 p-4 bg-secondary/50 rounded-xl">
-                    <div className="text-3xl font-bold text-primary">500+</div>
-                    <div className="text-sm text-muted-foreground">Projects Delivered</div>
-                  </div>
-                  <div className="space-y-2 p-4 bg-secondary/50 rounded-xl">
-                    <div className="text-3xl font-bold text-accent">99.9%</div>
-                    <div className="text-sm text-muted-foreground">Uptime Guarantee</div>
-                  </div>
-                  <div className="space-y-2 p-4 bg-secondary/50 rounded-xl">
-                    <div className="text-3xl font-bold text-primary">24/7</div>
-                    <div className="text-sm text-muted-foreground">Support Available</div>
-                  </div>
-                  <div className="space-y-2 p-4 bg-secondary/50 rounded-xl">
-                    <div className="text-3xl font-bold text-accent">150+</div>
-                    <div className="text-sm text-muted-foreground">Happy Clients</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 pt-4 border-t border-border">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3, 4].map((i) => (
+                {/* Image Carousel */}
+                <div className="relative overflow-hidden rounded-2xl bg-secondary/30 border border-border">
+                  <div 
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                  >
+                    {services.map((service, index) => (
                       <div
-                        key={i}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground text-sm font-medium border-2 border-card"
+                        key={index}
+                        className="min-w-full"
                       >
-                        {String.fromCharCode(64 + i)}
+                        <div className="relative aspect-[4/3] w-full">
+                          <img
+                            src={service.image}
+                            alt={service.name}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                            <p className="text-white font-semibold text-lg text-center">
+                              {service.name}
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                </div>
+
+                {/* Carousel Navigation - Below Images */}
+                <div className="flex items-center justify-center gap-4">
+                  <button
+                    onClick={prevSlide}
+                    className="p-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  
+                  {/* Carousel Indicators */}
+                  <div className="flex gap-2">
+                    {services.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          index === currentSlide 
+                            ? 'w-8 bg-accent' 
+                            : 'w-2 bg-border hover:bg-accent/50'
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={nextSlide}
+                    className="p-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </div>
+
+                {/* <div className="flex items-center justify-center gap-4 pt-4 border-t border-border">
+                  <div className="text-sm text-muted-foreground text-center">
                     <span className="font-semibold text-foreground">1000+</span> businesses trust us
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -228,11 +228,11 @@ const Expertise = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" id="expertise-section">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-2 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-background" />
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl" />
@@ -244,7 +244,7 @@ const Expertise = () => {
               Trusted by 100+ Enterprise Clients
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-              Technical Excellence That <span className="text-primary">Drives Results</span>
+              True InfraLabs <h1 className="text-primary pt-4">"Where System Connects"</h1>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               We deliver enterprise-grade technology solutions backed by proven methodologies, 
@@ -270,9 +270,9 @@ const Expertise = () => {
             {expertiseAreas.map((area, index) => {
               const Icon = area.icon;
               return (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border">
+                <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border bg-gradient-to-br from-card to-card/50">
                   <CardHeader>
-                    <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${area.gradient} p-3 mb-4 group-hover:scale-110 transition-transform`}>
+                    <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${area.gradient} p-3 mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
                       <Icon className="w-full h-full text-white" />
                     </div>
                     <CardTitle className="text-xl mb-2">{area.title}</CardTitle>
@@ -283,7 +283,7 @@ const Expertise = () => {
                       <p className="text-sm font-semibold text-foreground mb-2">Technologies</p>
                       <div className="flex flex-wrap gap-2">
                         {area.technologies.map((tech, idx) => (
-                          <Badge key={idx} variant="secondary" className="text-xs">
+                          <Badge key={idx} variant="secondary" className="text-xs bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
                             {tech}
                           </Badge>
                         ))}
@@ -327,8 +327,8 @@ const Expertise = () => {
                 <Card key={index} className="border-border hover:border-primary/50 transition-colors">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-primary" />
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent/10 to-accent/10 flex items-center justify-center shadow-sm">
+                        <Icon className="w-5 h-5 text-accent" />
                       </div>
                       <CardTitle className="text-lg">{stack.category}</CardTitle>
                     </div>
@@ -336,7 +336,7 @@ const Expertise = () => {
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {stack.technologies.map((tech, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs">
+                        <Badge key={idx} variant="outline" className=" bg-primary/10 text-primary hover:bg-primary/20 border-primary/20">
                           {tech}
                         </Badge>
                       ))}
@@ -365,10 +365,10 @@ const Expertise = () => {
             {methodology.map((phase, index) => {
               const Icon = phase.icon;
               return (
-                <Card key={index} className="border-border hover:shadow-lg transition-shadow">
+                <Card key={index} className="border-border hover:shadow-lg transition-all hover:border-primary/30 bg-gradient-to-br from-primary/5 to-transparent">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center font-bold shadow-md">
                         {index + 1}
                       </div>
                       <Icon className="w-6 h-6 text-primary" />
@@ -410,10 +410,10 @@ const Expertise = () => {
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
-                <Card key={index} className="border-border hover:border-primary/50 transition-all hover:shadow-md">
+                <Card key={index} className="border-border hover:border-accent/50 transition-all hover:shadow-lg bg-gradient-to-br from-accent/10 via-primary/5 to-transparent">
                   <CardHeader>
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br  flex items-center justify-center shadow-md">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
                       <CardTitle className="text-xl">{industry.name}</CardTitle>
@@ -476,7 +476,7 @@ const Expertise = () => {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

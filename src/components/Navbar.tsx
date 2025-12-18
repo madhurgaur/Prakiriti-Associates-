@@ -70,7 +70,7 @@ const Navbar = () => {
         { label: "SOP" },
       ],
     },
-    { label: "Expertise", href: "/expertise" },
+    // { label: "Expertise", href: "/expertise" },
     {
       label: "Support",
       submenu: [
@@ -205,7 +205,7 @@ const Navbar = () => {
                 <span className="text-primary-foreground font-bold text-xl">P</span>
               </div>
               <span className="text-xl font-bold text-primary tracking-tight">
-                PRAKRITI<span className="text-accent">_</span>ASSOCIATE
+                True Infra<span className="text-accent"></span>Labs
               </span>
             </a>
           </div>
